@@ -87,12 +87,16 @@ if search_query:
                     with st.container():
                         st.markdown("---")
                         
-                        # En-tête
-                        col1, col2 = st.columns([4, 1])
+                        st.markdown(f"### {paper['title']}")
+                        
+                        # Scores détaillés
+                        col1, col2, col3 = st.columns(3)
                         with col1:
-                            st.markdown(f"### {paper['title']}")
+                            st.metric("Score Hybride", f"{paper['score']:.3f}")
                         with col2:
-                            st.metric("Score", f"{paper['score']:.3f}")
+                            st.metric("Score BM25", f"{paper['bm25_score']:.3f}")
+                        with col3:
+                            st.metric("Score Sémantique", f"{paper['semantic_score']:.3f}")
                         
                         # Métadonnées
                         col1, col2, col3 = st.columns(3)
