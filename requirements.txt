@@ -1,0 +1,12 @@
+fastapi
+pydantic
+arxiv
+chromadb
+requests
+uvicorn
+streamlit
+plotly-express
+pandas
+rank_bm25
+numpy
+scikit-learn

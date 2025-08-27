@@ -1,64 +1,65 @@
 # PROJET_NLP_DIT
 
-<h3>Objectif Mettre en œuvre un moteur de recherche local pour un corpus d’articles scientifiques (arXiv),
-doté de capacités d’interrogation sémantique, de filtrage et de synthèse</h3><br>
+**Objectif**  
+Mettre en œuvre un moteur de recherche local pour un corpus d’articles scientifiques (arXiv), doté de capacités d’interrogation **sémantique**, de **filtrage** et de **synthèse**.
 
-<b>Concepts Clés</b>
+---
 
-– Base de Données Vectorielle (ChromaDB) : Stockage et recherche de vecteurs générés avec Ollama
-Embeddings.<br>
-– Recherche Hybride : Fusion des scores de pertinence sémantique (vecteurs) et lexicale (e.g., BM25).<br>
-– Query Expansion : Utilisation de Gemma (via Ollama) pour reformuler la requête initiale.<br>
-– Recherche à Facettes : Filtrage des résultats basé sur des métadonnées structurées.<br>
-<h6>Fonctionnalités Attendues</h6><br>
-  • Pipeline d’Ingestion et d’Indexation : Extraction, segmentation, génération d’embeddings (Ollama) et
-indexation dans ChromaDB.<br>
-  • Moteur d’Interrogation Avancé : Expansion de requête, calcul et fusion des scores pour un classement
-hybride.<br>
-  • Interface de Recherche Web : Développement d’une application Streamlit pour la recherche et le
-filtrage.<br>
-  • Synthèse à la Volée : Générer un résumé synthétique des N meilleurs résultats avec Gemma.<br>
-  • Analyse de Tendances : Visualiser l’évolution temporelle de mots-clés dans le corpus.<br>
-  • Visualisation du Réseau d’Auteurs : Construire et afficher un graphe de co-auteurs.
+## Concepts clés
 
+- **Base de données vectorielle (ChromaDB)** : stockage de vecteurs (embeddings) générés via Ollama.  
+- **Recherche hybride** : fusion des scores sémantiques (embeddings) et lexicaux (BM25).  
+- **Query Expansion** : reformulation ou extension de requêtes à l’aide de Gemma (via Ollama).  
+- **Recherche à facettes** : filtrage avancé des résultats selon les métadonnées (auteur, date, domaine…).
 
-DETAILS <br>
+---
 
-1-ChromaDB (Base vectorielle)
+## Fonctionnalités attendues
 
-On stocke non pas les mots, mais des vecteurs qui représentent le sens du texte.
+1. Pipeline d’ingestion et d’indexation : segmentation, génération d’embeddings, indexation dans ChromaDB.  
+2. Moteur d'interrogation avancé : expansion de requête, fusion hybride des scores.  
+3. Interface web avec **Streamlit** : saisie de requêtes, affichage des résultats, filtres dynamiques, résumé automatique.  
+4. Synthèse de résultats : résumer automatiquement les N meilleurs résultats avec Gemma.  
+5. Analyse de tendances : visualisation temporelle des mots-clés dans le corpus.  
+6. Graphe de co-auteurs : affichage des collaborations entre auteurs via un réseau.
 
-Ces vecteurs sont générés grâce à Ollama qui produit des embeddings (représentations numériques du texte).
+---
 
-2-Recherche Hybride
+## Détails techniques
 
-On combine deux méthodes :
+### 1. Base de données vectorielle (ChromaDB)  
+On stocke des **embeddings** générés par Ollama, permettant une recherche sémantique efficace.
 
-Recherche sémantique (trouver les textes qui veulent dire la même chose que ta requête).
+### 2. Recherche hybride  
+- **Sémantique** : recherche par similarité vectorielle.  
+- **Lexicale** : recherche via BM25.  
+- **Fusion des scores** : amélioration du classement final en combinant les deux approches.
 
-Recherche lexicale (BM25 : trouver les textes contenant les mêmes mots).
+### 3. Expansion de requête  
+Gemma enrichit ou reformule les requêtes trop courtes ou ambiguës pour améliorer la pertinence des résultats.
 
-Les scores des deux méthodes sont fusionnés pour un meilleur classement.
+### 4. Recherche à facettes  
+Permet à l’utilisateur de filtrer les résultats par **auteur**, **date**, **catégorie**, etc.
 
-3-Expansion de requête (Query Expansion)
+### 5. Pipeline d’ingestion  
+Extraction, segmentation des articles, génération d’embeddings, et stockage dans ChromaDB.
 
-Si ta requête est trop courte ou imprécise, Gemma (via Ollama) la reformule ou l’enrichit pour trouver plus de résultats pertinents.
+### 6. Interface web (Streamlit)  
+Permet la saisie de requêtes, l’affichage interactif des résultats, l’application de filtres et la génération de résumés.
 
-4-Recherche à facettes
+### 7. Analyse & visualisations  
+- **Tendances** : évolution temporelle des mots-clés.  
+- **Réseau d’auteurs** : visualisation des collaborations au sein du corpus.
 
-Permet de filtrer les résultats par métadonnées (ex : auteur, date, domaine).
+---
 
-5-Pipeline d’ingestion
+## Aperçu du projet
 
-On prend les documents, on les découpe en morceaux (segmentation), on crée les vecteurs (embeddings) et on les stocke dans ChromaDB.
+*(Ajoute ici un schéma, un screenshot ou un GIF de démonstration :)*  
+![](path/to/your/image.png)
 
-6-Interface web (Streamlit)
+---
 
-L’utilisateur tape sa requête, voit les résultats, filtre par facettes, et consulte des résumés automatiques générés par Gemma.
+## Licence
 
-7-Analyse et visualisations
-
-Tendances : voir comment certains mots-clés apparaissent/disparaissent dans le temps.
-
-Graphe de co-auteurs : voir quels auteurs collaborent ensemble dans le corpus.
-
+Ce projet est distribué sous la licence **MIT License** – voir le fichier `LICENSE` pour plus de détails.
