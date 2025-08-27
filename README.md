@@ -53,10 +53,14 @@ Permet la saisie de requêtes, l’affichage interactif des résultats, l’appl
 
 ---
 
-## Aperçu du projet
+## Aperçu de l 'architecture
 
-*(Ajoute ici un schéma, un screenshot ou un GIF de démonstration :)*  
 ![](image.png)
+
+## comment lancer le projet 
+-Install les dependences du fichier : requirements.txt
+-lancer le backend  : python backend.py
+-lancer le frontend : streamlit run frontend.py
 
 ---
 
