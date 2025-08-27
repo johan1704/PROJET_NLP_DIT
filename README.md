@@ -56,7 +56,7 @@ Permet la saisie de requêtes, l’affichage interactif des résultats, l’appl
 ## Aperçu du projet
 
 *(Ajoute ici un schéma, un screenshot ou un GIF de démonstration :)*  
-![](path/to/your/image.png)
+![](image.png)
 
 ---
 
