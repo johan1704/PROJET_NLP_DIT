@@ -58,9 +58,9 @@ Permet la saisie de requêtes, l’affichage interactif des résultats, l’appl
 ![](image.png)
 
 ## comment lancer le projet 
--Install les dependences du fichier : requirements.txt
--lancer le backend  : python backend.py
--lancer le frontend : streamlit run frontend.py
+-**Install les dependences du fichier** : requirements.txt <br>
+-**lancer le backend**  : python backend.py <br>
+-**lancer le frontend** : streamlit run frontend.py 
 
 ---
 
